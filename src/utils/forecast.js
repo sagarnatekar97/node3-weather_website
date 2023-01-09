@@ -7,6 +7,7 @@ const forcast=(latitude,longitude,callback)=>{
         const{humidity}=body.main
         const{temp}=body.main
         const{feels_like}=body.main
+        const{description}=body.weather
 
         if(error){
                     callback("unable to connect with service",undefined);
@@ -16,16 +17,10 @@ const forcast=(latitude,longitude,callback)=>{
             
                 }
         else{
-                   if(humidity>80){
-                    callback(undefined,"there is 70% cahnce of rainbecause humdity is:"+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
-                   }
-                   else if(humidity>60&&humidity<100){
-                    callback(undefined,'there is 50% chance of rain because humdity is:'+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
-                   }
-                   else{
-                    callback(undefined,"there is no 0% chance of rainbecause humdity is:"+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
-                   }
-                }
+                  
+                    callback(undefined,"there is chance of "+ description  +"  because humdity is:"+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
+                   
+         }
 
     })
 }
