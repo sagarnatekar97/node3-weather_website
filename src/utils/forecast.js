@@ -7,7 +7,8 @@ const forcast=(latitude,longitude,callback)=>{
         const{humidity}=body.main
         const{temp}=body.main
         const{feels_like}=body.main
-        const{description}=body.weather
+        const{description}=body.weather[0]
+        console.log(description);
 
         if(error){
                     callback("unable to connect with service",undefined);
