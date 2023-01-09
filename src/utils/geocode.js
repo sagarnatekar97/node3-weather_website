@@ -15,8 +15,8 @@ const geocode=(address,callback)=>{
           
          const {lat:latitude,lon:longitude}=body.coord
          const{name:location}=body
-         const {country}=body.sys.country
-         console.log(country);
+         const {country}=body.sys
+       
       
         if(error){
             callback("unbale to connect with service",undefined)

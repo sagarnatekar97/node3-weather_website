@@ -8,7 +8,9 @@ const forcast=(latitude,longitude,callback)=>{
         const{temp}=body.main
         const{feels_like}=body.main
         const{description}=body.weather[0]
-        console.log(description);
+        // console.log(description);
+        const {name}=body
+        // console.log(name);
 
         if(error){
                     callback("unable to connect with service",undefined);
@@ -19,7 +21,7 @@ const forcast=(latitude,longitude,callback)=>{
                 }
         else{
                   
-                    callback(undefined,"there is chance of "+ description  +"  because humdity is:"+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
+                    callback(undefined,"Weather of "+name+" and now its "+ description  +"  because humdity is:"+humidity+" and currunt temprature is "+temp+" and its feels like"+feels_like)
                    
          }
 
